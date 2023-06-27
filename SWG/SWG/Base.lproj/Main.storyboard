@@ -28,6 +28,9 @@
                                     <segment title="ITunes"/>
                                     <segment title="GitHub"/>
                                 </segments>
+                                <connections>
+                                    <action selector="choiceSearch:" destination="BYZ-38-t0r" eventType="valueChanged" id="Rft-eg-ng3"/>
+                                </connections>
                             </segmentedControl>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kHU-u0-8u7">
                                 <rect key="frame" x="0.0" y="95" width="393" height="44"/>
@@ -40,11 +43,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Fu6-ZK-8ME"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="waz-od-TnS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="waz-od-TnS">
                                 <rect key="frame" x="0.0" y="139" width="393" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell0" id="fii-2N-vQe" customClass="FirstTableViewCell" customModule="SWG" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell0" id="fii-2N-vQe" customClass="FirstTableViewCell" customModule="SWG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fii-2N-vQe" id="2GN-8V-dzQ">
@@ -101,7 +104,7 @@
                                             <outlet property="nameLableCello" destination="Aa8-aU-DUD" id="QpT-nF-3Wc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell1" id="1be-SR-5ri" customClass="SecondTableViewCell" customModule="SWG" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell1" id="1be-SR-5ri" customClass="SecondTableViewCell" customModule="SWG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="393" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1be-SR-5ri" id="1NQ-zL-crt">
@@ -179,6 +182,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="kHU-u0-8u7" id="f1Q-CO-P01"/>
+                        <outlet property="segmentedControl" destination="Exd-6g-bvQ" id="HLi-Sd-qj8"/>
                         <outlet property="tableView" destination="waz-od-TnS" id="vxF-gL-Wwg"/>
                     </connections>
                 </viewController>
