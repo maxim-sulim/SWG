@@ -10,12 +10,12 @@ import Foundation
 import Foundation
 
 // MARK: - Results
-struct Results: Codable {
-    var results: [ResultsData]
+struct ResultsITunes: Codable {
+    var results: [ResultsDataITunes]
 }
 
 // MARK: - Result
-struct ResultsData: Codable {
+struct ResultsDataITunes: Codable {
     let artistID, collectionID: Int?
     let artistName: String
     let collectionName, collectionCensoredName: String?

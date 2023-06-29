@@ -8,13 +8,28 @@
 import UIKit
 
 class FirstTableViewCell: UITableViewCell {
-
     
-    @IBOutlet weak var imageCell0: UIImageView!
-    @IBOutlet weak var nameLableCello: UILabel!
+    struct ViewModel {
+        var index = 0
+    }
+    private var model = ViewModel()
+    
+    
+    weak var delegate: VCSourceProtocol?
+    
+    @IBOutlet weak var buttonImage: UIButton!
+    
+    
+    @IBOutlet weak var nameLableCell0: UILabel!
     @IBOutlet weak var descriptionLableCell0: UILabel!
     
-  
+    
+    
+    @IBAction func tapImageButton(_ sender: UIButton) {
+        
+        delegate?.segueImage(index: model.index)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -23,32 +38,33 @@ class FirstTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-
     
-    func configureFirstCell(text: ResultsData) {
+    func configureFirstCellITunes(text: ResultsDataITunes, index: Int) {
         
         if let urlString = text.artworkUrl100 {
+            self.model.index = index
             
             DispatchQueue.main.async {
-                NetworkRequest.shared.requestITunes(stringUrl: urlString) { result in
+                NetworkRequest.shared.request(stringUrl: urlString) { result in
                     switch result {
-                        
                     case .success(let data):
                         let image = UIImage(data: data)
-                        self.imageCell0.image = image
+                        self.buttonImage.setImage(image, for: .normal)
+                        self.buttonImage.imageView?.contentMode = .scaleAspectFit
+                        self.buttonImage.tag = index
+                        
                     case .failure(let error ):
                         print(error.localizedDescription)
-                        self.imageCell0.image = UIImage(systemName: "person.fill")
+                        self.buttonImage.imageView?.image = UIImage(systemName: "person.fill")
+                        self.buttonImage.imageView?.contentMode = .scaleAspectFit
                     }
                 }
             }
             
         } else {
-            self.imageCell0.image = UIImage(systemName: "person.fill")
+            self.buttonImage.imageView?.image = UIImage(systemName: "person.fill")
         }
-        
-        
-        nameLableCello.text = text.artistName
+        nameLableCell0.text = text.artistName
         
         if text.trackName == "" {
             descriptionLableCell0.text = "No track"
@@ -57,5 +73,39 @@ class FirstTableViewCell: UITableViewCell {
         }
         
     }
-
+    
+    func configureFirstCellIGit(text: ResultsDataGit, index: Int) {
+        
+        if let urlString = text.avatarURL {
+            self.model.index = index
+            DispatchQueue.main.async {
+                NetworkRequest.shared.request(stringUrl: urlString) { result in
+                    switch result {
+                        
+                    case .success(let data):
+                        let image = UIImage(data: data, scale: 5)
+                        self.buttonImage.setImage(image, for: .normal)
+                        self.buttonImage.imageView?.contentMode = .scaleAspectFit
+                    case .failure(let error ):
+                        print(error.localizedDescription)
+                        self.buttonImage.setImage(UIImage(systemName: "person.fill"), for: .normal)
+                        self.buttonImage.imageView?.contentMode = .scaleAspectFit
+                    }
+                }
+            }
+            
+        } else {
+            self.buttonImage.setImage(UIImage(systemName: "person.fill"), for: .normal)
+            self.buttonImage.imageView?.contentMode = .scaleAspectFit
+        }
+        
+        nameLableCell0.text = text.login
+        
+        if text.type == "" {
+            descriptionLableCell0.text = "No link"
+        } else {
+            descriptionLableCell0.text = text.url
+        }
+        
+    }
 }

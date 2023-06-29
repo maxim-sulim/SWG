@@ -18,6 +18,8 @@
 		ABAC80982A4B4D35006273D6 /* ModelITunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC80972A4B4D35006273D6 /* ModelITunes.swift */; };
 		ABAC809B2A4B4F1A006273D6 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC809A2A4B4F1A006273D6 /* NetworkRequest.swift */; };
 		ABAC809D2A4B5470006273D6 /* NetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC809C2A4B5470006273D6 /* NetworkData.swift */; };
+		ABAC809F2A4C0F47006273D6 /* ModelGit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC809E2A4C0F47006273D6 /* ModelGit.swift */; };
+		ABAC80A32A4CD19A006273D6 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC80A22A4CD19A006273D6 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		ABAC80972A4B4D35006273D6 /* ModelITunes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelITunes.swift; sourceTree = "<group>"; };
 		ABAC809A2A4B4F1A006273D6 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		ABAC809C2A4B5470006273D6 /* NetworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkData.swift; sourceTree = "<group>"; };
+		ABAC809E2A4C0F47006273D6 /* ModelGit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelGit.swift; sourceTree = "<group>"; };
+		ABAC80A22A4CD19A006273D6 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				AB53F3392A49E02300FAA867 /* ViewController.swift */,
+				ABAC80A22A4CD19A006273D6 /* ImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				ABAC80972A4B4D35006273D6 /* ModelITunes.swift */,
+				ABAC809E2A4C0F47006273D6 /* ModelGit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABAC809D2A4B5470006273D6 /* NetworkData.swift in Sources */,
+				ABAC809F2A4C0F47006273D6 /* ModelGit.swift in Sources */,
+				ABAC80A32A4CD19A006273D6 /* ImageViewController.swift in Sources */,
 				AB53F33A2A49E02300FAA867 /* ViewController.swift in Sources */,
 				ABAC809B2A4B4F1A006273D6 /* NetworkRequest.swift in Sources */,
 				ABAC80982A4B4D35006273D6 /* ModelITunes.swift in Sources */,

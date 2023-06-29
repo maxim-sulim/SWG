@@ -15,13 +15,13 @@ class NetworkData {
     private init() {}
     
     
-    func workData(urlString: String, responce: @escaping (Results?, Error?) -> Void) {
+    func workDataITunes(urlString: String, responce: @escaping (ResultsITunes?, Error?) -> Void) {
         
-        NetworkRequest.shared.requestITunes(stringUrl: urlString) { result in
+        NetworkRequest.shared.request(stringUrl: urlString) { result in
             switch result {
             case .success(let data):
                 do {
-                    let resultData = try JSONDecoder().decode(Results.self, from: data)
+                    let resultData = try JSONDecoder().decode(ResultsITunes.self, from: data)
                     responce(resultData,nil)
                 } catch let jsonError {
                     print(jsonError.localizedDescription)
@@ -33,5 +33,25 @@ class NetworkData {
         }
         
     }
+    
+    func workDataGitUsers(urlString: String, responce: @escaping (ResultsGit?, Error?) -> Void) {
+        
+        NetworkRequest.shared.request(stringUrl: urlString) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let resultData = try JSONDecoder().decode(ResultsGit.self, from: data)
+                    responce(resultData,nil)
+                } catch let jsonError {
+                    print(jsonError.localizedDescription)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                responce(nil, error)
+            }
+        }
+        
+    }
+    
     
 }

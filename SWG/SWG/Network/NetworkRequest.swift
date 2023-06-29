@@ -13,7 +13,7 @@ class NetworkRequest {
     
     private init() {}
     
-    func requestITunes(stringUrl: String, complition: @escaping(Result<Data,Error>) -> Void){
+    func request(stringUrl: String, complition: @escaping(Result<Data,Error>) -> Void){
         
         guard let url = URL(string: stringUrl) else {
             return
